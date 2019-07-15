@@ -19,6 +19,7 @@ docker build:
   stage: Build image
   script:
   - docker info
+  - docker-machine ip
   - docker build -t $LATEST_VER_NGINX -t $MINOR_VER_NGINX ./nginx
   - docker build -t $LATEST_VER_PHP -t $MINOR_VER_PHP ./php
 #  - docker build -t $LATEST_VER_PHP -t $MAJOR_VER -t $MINOR_VER -t $PATCH_VER .
